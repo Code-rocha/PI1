@@ -1,26 +1,23 @@
-from flask import Flask, render_template
+from flask import Blueprint, render_template
 
-app = Flask(__name__)
+bp = Blueprint('routes', __name__)
 
-@app.route("/")
+@bp.route("/")
 def homepage():
-        return render_template("homepage.html")
+    return render_template("homepage.html")
 
-@app.route("/vacinas_disponiveis")
+@bp.route("/vacinas_disponiveis")
 def vdisponiveis():
-        return render_template("vdisponiveis.html")
+    return render_template("vdisponiveis.html")
 
-@app.route("/quem_pode_se_vacinar")
+@bp.route("/quem_pode_se_vacinar")
 def qpsvacinar():
-        return render_template("quem_pode_se_vacinar.html")
+    return render_template("quem_pode_se_vacinar.html")
 
-@app.route("/calendario")
+@bp.route("/calendario")
 def calendario():
-        return render_template("calendario.html")
+    return render_template("calendario.html")
 
-@app.route("/locais")
+@bp.route("/locais")
 def locais():
-        return render_template("locais.html")
-
-if __name__ == "__main__":
-        app.run(debug=True)
+    return render_template("locais.html")
